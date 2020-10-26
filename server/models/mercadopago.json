@@ -1,0 +1,87 @@
+{
+  "name": "mercadopago",
+  "plural": "mercadopago",
+  "base": "PersistedModel",
+  "strict": true,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "mongodb": {
+      "collection": "mercadopago",
+      "allowExtendedOperators": true
+    }
+  },
+  "hidden": [
+    "id",
+    "email",
+    "createdOn",
+    "preference",
+    "merchant_order",
+    "payment",
+    "chargebacks"
+  ],
+  "properties": {
+    "itemId": {
+      "type": "string",
+      "required": true,
+      "description": "Item id"
+    },
+    "email": {
+      "type": "string",
+      "required": false,
+      "description": "User email"
+    },
+    "createdOn": {
+      "type": "date",
+      "required": false,
+      "description": "The date when the preference is created"
+    },
+    "preference": {
+      "type": "object",
+      "required": false,
+      "description": "MercadoPago preference object"
+    },
+    "dataPreferenceId": {
+      "type": "string",
+      "required": false,
+      "description": "The preference Id returned by MercadoPago"
+    },
+    "initPoint": {
+      "type": "string",
+      "required": false,
+      "description": "MP init point url"
+    },
+    "merchant_order": {
+      "type": "object",
+      "required": false,
+      "description": "Mercado Pago Merchant order data"
+    },
+    "payment": {
+      "type": "object",
+      "required": false,
+      "description": "Mercado Pago payment data"
+    },
+    "chargebacks": {
+      "type": "object",
+      "required": false,
+      "description": "Mercado Pago chargebacks data"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "create"
+    }
+  ],
+  "methods": {}
+}

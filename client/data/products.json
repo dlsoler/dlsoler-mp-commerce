@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Samsung Galaxy S9",
+    "subtitle": "La cámara reimaginada.",
+    "description": "Los teléfonos Galaxy S9 y S9+ introdujeron la revolucionaria cámara para teléfono de diafragma doble que se adapta a la luz como el ojo humano.",
+    "price": 15000,
+    "image": "images/img-1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Samsung Galaxy S20",
+    "subtitle": "El smartphone que cambiará la fotografía.",
+    "description": "Descubrí los Galaxy S20, S20+ y S20 Ultra. Con captura de video en 8K que cambia tu forma de tomar no solo videos, sino también fotos..",
+    "price": 35000,
+    "image": "images/img-2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Apple iPhone X",
+    "subtitle": "Lorem ipsum dolor sit amet.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet feugiat orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "price": 85000,
+    "image": "images/img-3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Xiaomi 10T Pro",
+    "subtitle": "Power your creativity.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet feugiat orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "price": 55000,
+    "image": "images/img-4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "LG K50S",
+    "subtitle": "Tres maneras para contar tu historia.",
+    "description": "Tomá fotos claras y nítidas con la cámara 13MP, capturalo todo con la cámara Súper Gran Angular 5MP y obtené una apariencia Bokeh con el sensor de profundidad 2MP.",
+    "price": 67000,
+    "image": "images/img-5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Motorola One fusion",
+    "subtitle": "La combinación justa entre resolución y desempeño",
+    "description": "Nuevo motorola one fusion con sistema de cuatro cámaras con sensor principal de 48 MP¹, pantalla Max Vision HD+, desempeño ultra rápido y una potente batería de 5000 mAh. Todo lo que necesitás para tu día a día.",
+    "price": 80000,
+    "image": "images/img-6.jpg"
+  }
+]
