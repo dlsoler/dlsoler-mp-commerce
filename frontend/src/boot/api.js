@@ -6,7 +6,7 @@ import isEmpty from 'lodash/isEmpty'
  * API CONFIGURATION
  */
 export const API_CONFIG = {
-  hostname: 'dlsoler-mp-commerce-nodejs.herokuapp.com/',
+  hostname: 'dlsoler-mp-commerce-nodejs.herokuapp.com',
   port: 80,
   protocol: 'https',
   restApiRoot: '/api'
