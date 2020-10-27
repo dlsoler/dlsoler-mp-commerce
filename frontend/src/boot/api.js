@@ -71,7 +71,7 @@ class API extends HttpClient {
 
 export const apiConfig = Object.assign({}, API_CONFIG)
 // apiConfig.baseURL = `${apiConfig.protocol}://${apiConfig.hostname}:${apiConfig.port}${apiConfig.restApiRoot}`
-apiConfig.baseURL = 'https://dlsoler-mp-ecommerce.herokuapp.com/api'
+apiConfig.baseURL = '/api'
 
 console.log('Base URL:', apiConfig.baseURL)
 
