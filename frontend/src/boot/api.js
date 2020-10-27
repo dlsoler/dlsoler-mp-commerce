@@ -6,9 +6,9 @@ import isEmpty from 'lodash/isEmpty'
  * API CONFIGURATION
  */
 export const API_CONFIG = {
-  hostname: 'dlsoler-mp-commerce-nodejs.herokuapp.com',
-  port: 80,
-  protocol: 'https',
+  hostname: window.location.hostname,
+  port: window.location.port,
+  protocol: window.location.protocol,
   restApiRoot: '/api'
 }
 
@@ -70,7 +70,10 @@ class API extends HttpClient {
 }
 
 export const apiConfig = Object.assign({}, API_CONFIG)
-apiConfig.baseURL = `${apiConfig.protocol}://${apiConfig.hostname}:${apiConfig.port}${apiConfig.restApiRoot}`
+// apiConfig.baseURL = `${apiConfig.protocol}://${apiConfig.hostname}:${apiConfig.port}${apiConfig.restApiRoot}`
+apiConfig.baseURL = 'https://dlsoler-mp-ecommerce.herokuapp.com/api'
+
+console.log('Base URL:', apiConfig.baseURL)
 
 // Export for testing
 export const apiInstance = new API(apiConfig)
