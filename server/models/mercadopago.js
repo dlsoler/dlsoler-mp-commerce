@@ -19,7 +19,7 @@ const mercadoPagoConfig = {
   integrator_id: 'dev_24c65fb163bf11ea96500242ac130004',
   external_reference: 'solerdiego@gmail.com',
   currencyCode: 'ARS',
-  notification_url: '/mp_notifications',
+  notification_url: '/mpnotifications',
   autoReturn: 'all',
   backUrls: {
     success: '/#/success',
