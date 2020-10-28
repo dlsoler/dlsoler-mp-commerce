@@ -33,7 +33,6 @@ export default {
   name: 'queryData',
   computed: {
     queryData () {
-      debugger
       if (isEmpty(this.$route.query)) {
         return []
       }
