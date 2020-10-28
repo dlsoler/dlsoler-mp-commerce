@@ -1,0 +1,36 @@
+{
+  "name": "mpnotification",
+  "plural": "mpnotifications",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "date_created": {
+      "type": "string"
+    },
+    "application_id": {
+      "type": "number"
+    },
+    "user_id": {
+      "type": "number"
+    },
+    "api_version": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
