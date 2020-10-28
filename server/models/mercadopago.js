@@ -84,12 +84,13 @@ module.exports = function(Mercadopago) {
           },
         };
 
-        const imageUrl = `http://${Mercadopago.app.get('host')}/${item.image}`;
+        const currentHost = Mercadopago.app.get('host');
+        const imageUrl = `http://${currentHost}/${item.image}`;
 
         // MP Item
         const mpItem = {
           id: '1234',
-          title: item.tile,
+          title: item.title,
           description: 'Dispositivo móvil de Tienda e-commerce',
           picture_url: imageUrl,
           quantity: 1,
@@ -111,6 +112,11 @@ module.exports = function(Mercadopago) {
 
         if (!isEmpty(mercadoPagoConfig.autoReturn)) {
           preferenceData.auto_return = mercadoPagoConfig.autoReturn;
+          const mpBacksUrls = {
+            success: `http://${currentHost}${mercadoPagoConfig.backUrls.success}`,
+            pending: `http://${currentHost}${mercadoPagoConfig.backUrls.pending}`,
+            failure: `http://${currentHost}${mercadoPagoConfig.backUrls.failure}`,
+          };
           preferenceData.back_urls = mercadoPagoConfig.backUrls;
         }
 
@@ -141,5 +147,27 @@ module.exports = function(Mercadopago) {
       .catch((error) => {
         next(error);
       });
+  });
+
+  Mercadopago.testreq =  async function(req, res, options) {
+    return {
+      protocol: req.protocol,
+      hostname: req.hostname,
+      port: process.env.PORT,
+      host2: Mercadopago.app.get('host'),
+    };
+  };
+
+  Mercadopago.remoteMethod('testreq', {
+    description: 'Testing remote request',
+    accepts: [
+      {arg: 'req', type: 'object', http: {source: 'req'}},
+      {arg: 'res', type: 'object', http: {source: 'res'}},
+      {arg: 'options', type: 'object', http: 'optionsFromRequest'},
+    ],
+    returns: {type: 'object', root: true},
+    http: {
+      verb: 'get',
+    },
   });
 };
