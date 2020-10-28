@@ -18,7 +18,7 @@ const mercadoPagoConfig = {
   integrator_id: 'dev_24c65fb163bf11ea96500242ac130004',
   external_reference: 'solerdiego@gmail.com',
   currencyCode: 'ARS',
-  notification_url: '',
+  notification_url: '/mp_notifications',
   autoReturn: 'all',
   backUrls: {
     success: '/#/success',
@@ -48,6 +48,10 @@ module.exports = function(Mercadopago) {
   Mercadopago.afterRemote('create', function(context, data, next) {
     // Product model
     const Product = Mercadopago.app.models.Product;
+
+    const hostname = context.req.hostname;
+    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+    const baseURL = `${protocol}://${hostname}`;
 
     // Find the product
     Product.findById(data.itemId)
@@ -84,8 +88,7 @@ module.exports = function(Mercadopago) {
           },
         };
 
-        const currentHost = Mercadopago.app.get('host');
-        const imageUrl = `http://${currentHost}/${item.image}`;
+        const imageUrl = `${baseURL}/${item.image}`;
 
         // MP Item
         const mpItem = {
@@ -104,20 +107,17 @@ module.exports = function(Mercadopago) {
           payer,
           external_reference: mercadoPagoConfig.external_reference,
           payment_methods: mercadoPagoConfig.payment_methods,
+          notification_url: `${baseURL}${mercadoPagoConfig.notificationUrl}`,
         };
-
-        if (!isEmpty(mercadoPagoConfig.notificationUrl)) {
-          preferenceData.notification_url = mercadoPagoConfig.notificationUrl;
-        }
 
         if (!isEmpty(mercadoPagoConfig.autoReturn)) {
           preferenceData.auto_return = mercadoPagoConfig.autoReturn;
           const mpBacksUrls = {
-            success: `http://${currentHost}${mercadoPagoConfig.backUrls.success}`,
-            pending: `http://${currentHost}${mercadoPagoConfig.backUrls.pending}`,
-            failure: `http://${currentHost}${mercadoPagoConfig.backUrls.failure}`,
+            success: `${baseURL}${mercadoPagoConfig.backUrls.success}`,
+            pending: `${baseURL}${mercadoPagoConfig.backUrls.pending}`,
+            failure: `${baseURL}${mercadoPagoConfig.backUrls.failure}`,
           };
-          preferenceData.back_urls = mercadoPagoConfig.backUrls;
+          preferenceData.back_urls = mpBacksUrls;
         }
 
         // Get the preference data id from MercadoPago
