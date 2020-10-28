@@ -11,15 +11,7 @@
       "allowExtendedOperators": true
     }
   },
-  "hidden": [
-    "id",
-    "email",
-    "createdOn",
-    "preference",
-    "merchant_order",
-    "payment",
-    "chargebacks"
-  ],
+  "hidden": [],
   "properties": {
     "itemId": {
       "type": "string",
