@@ -18,7 +18,7 @@ export default {
       .catch((error) => {
         this.$q.loading.hide()
         this.$q.notify({
-          timeout: 0,
+          timeout: 5,
           message: `No pudieron cargar los datos de los productos: ${error.message}`,
           type: 'warning',
           icon: 'smartphone',
