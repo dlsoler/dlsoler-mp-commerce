@@ -26,6 +26,14 @@ export default {
   name: 'failurePage',
   components: {
     'query-data': queryData
+  },
+  mounted () {
+    // FIXME: Remove by hand the MercadoPago Dialog
+    const htmlCollection = document.getElementsByClassName('mp-mercadopago-checkout-wrapper')
+    if (htmlCollection.length === 0) {
+      return
+    }
+    htmlCollection.forEach((element) => element.parentNode.removeChild(element))
   }
 }
 </script>
