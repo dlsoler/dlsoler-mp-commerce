@@ -138,6 +138,7 @@ module.exports = function(Mercadopago) {
             preference,
             dataPreferenceId,
             initPoint,
+            preference: response.body,
           }
         );
       })
