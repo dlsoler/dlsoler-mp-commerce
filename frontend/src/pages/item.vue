@@ -33,7 +33,7 @@
           <q-separator dark />
 
           <q-card-actions align="around">
-            <q-btn size="lg" color="primary" padding="4px 20px" :to="`/buy/${product.id}`">Comprar</q-btn>
+            <q-btn size="lg" color="primary" padding="4px 20px" :to="`/buy/${item.id}`">Comprar</q-btn>
             <q-btn size="lg" color="primary" outline padding="4px 20px" to="/">Volver</q-btn>
           </q-card-actions>
 
