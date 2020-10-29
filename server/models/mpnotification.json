@@ -7,6 +7,11 @@
     "validateUpsert": false
   },
   "properties": {
+    "mpnid": {
+      "type": "Number",
+      "id": 1,
+      "generated": true
+    },
     "id": {
       "type": "string"
     },
