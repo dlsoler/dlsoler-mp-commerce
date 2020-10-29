@@ -53,12 +53,6 @@ export default {
     buyProduct (productId) {
       console.log(productId)
     }
-  },
-  mounted () {
-    const securityScript = document.createElement('script')
-    securityScript.setAttribute('src', 'https://www.mercadopago.com/v2/security.js')
-    securityScript.setAttribute('view', 'home')
-    document.head.appendChild(securityScript)
   }
 }
 </script>

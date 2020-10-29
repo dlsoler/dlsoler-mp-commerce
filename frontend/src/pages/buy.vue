@@ -64,11 +64,6 @@ export default {
     }
   },
   mounted () {
-    const securityScript = document.createElement('script')
-    securityScript.setAttribute('src', 'https://www.mercadopago.com/v2/security.js')
-    securityScript.setAttribute('view', 'item')
-    document.head.appendChild(securityScript)
-
     this.$q.loading.show()
     this.$store.dispatch(FIND_PREFERENCE_ACTION, { itemId: this.$route.params.id })
       .then((preferenceId) => {

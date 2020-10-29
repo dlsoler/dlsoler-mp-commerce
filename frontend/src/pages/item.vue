@@ -56,12 +56,6 @@ export default {
     item () {
       return this.$store.getters[GET_PRODUCT_GETTER](this.$route.params.id)
     }
-  },
-  mounted () {
-    const securityScript = document.createElement('script')
-    securityScript.setAttribute('src', 'https://www.mercadopago.com/v2/security.js')
-    securityScript.setAttribute('view', 'item')
-    document.head.appendChild(securityScript)
   }
 }
 </script>
