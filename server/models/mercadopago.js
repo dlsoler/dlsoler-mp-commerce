@@ -20,7 +20,7 @@ const mercadoPagoConfig = {
   external_reference: 'solerdiego@gmail.com',
   currencyCode: 'ARS',
   notification_url: '/api/mpnotifications',
-  autoReturn: 'all',
+  autoReturn: 'approved',
   backUrls: {
     success: '/#/success',
     pending: '/#/pending',
