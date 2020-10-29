@@ -13,9 +13,6 @@
     "date_created": {
       "type": "string"
     },
-    "application_id": {
-      "type": "number"
-    },
     "user_id": {
       "type": "number"
     },
@@ -27,6 +24,18 @@
     },
     "data": {
       "type": "object"
+    },
+    "live_mode": {
+      "type": "boolean"
+    },
+    "type": {
+      "type": "string"
+    },
+    "application_id": {
+      "type": "number"
+    },
+    "version": {
+      "type": "number"
     }
   },
   "validations": [],
