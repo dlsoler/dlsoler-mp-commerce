@@ -5,9 +5,10 @@
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
-    "Product": 2,
+    "Product": 7,
     "Customer": 1,
-    "mercadopago": 22
+    "mercadopago": 1,
+    "mpnotification": 1
   },
   "models": {
     "User": {},
@@ -24,8 +25,7 @@
       "6": "{\"id\": 6,\"title\": \"Motorola One fusion\",\"subtitle\": \"La combinación justa entre resolución y desempeño\",\"description\": \"Nuevo motorola one fusion con sistema de cuatro cámaras con sensor principal de 48 MP¹, pantalla Max Vision HD+, desempeño ultra rápido y una potente batería de 5000 mAh. Todo lo que necesitás para tu día a día.\",\"price\": 80000,\"image\": \"images/img-6.jpg\"}"
     },
     "Customer": {},
-    "mercadopago": {
-
-    }
+    "mercadopago": {},
+    "mpnotification": {}
   }
 }
